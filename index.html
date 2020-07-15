@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Media Player</title>
+        <link rel="shortcut icon" href="Assets/start_platinum.png" type="image/x-icon">
+        <link rel="stylesheet" href="CSSCode/pageStyle.css">
+        <link rel="stylesheet" href="CSSCode/videoStyle.css">
+    </head>
+    <body>
+
+        <header class="header">
+            <div class="header__cover"></div>
+            <div class="header__title">
+                <p>⭐Platzi video</p>
+            </div>
+        </header>
+
+        <section class="main-section">
+            <div class="main-section__item">
+                <!-- ***** -->
+                <div class="video-container">
+                    <div class="main-video">
+                        <video src="Assets/Jotaro_vs_Kira.mp4"></video>
+                    </div>
+                    <div class="video-controls">
+        
+        
+                        <div class="progress-bar-section">
+                            <div class="progress-wrapper">
+                                <span class="progress-wrapper__bar"><span class="progress-wrapper__dot"></span></span>
+                            </div>
+                        </div>
+        
+        
+                        <div class="play-section">
+                            <div class="play-wrapper">
+                                <span class="play-icon play-icon--play"></span>
+                            </div>
+                        </div>
+        
+        
+                        <div class="sound-section">
+                            <div class="sign-wrapper">
+                                <span class="prohibition-sign"></span>
+                                <span class="sound-icon"></span>
+                            </div>
+                            <div class="sound-bar-wrapper">
+                                <span class="sound-bar">
+                                    <span class="sound-dot"></span>
+                                </span>
+                            </div>
+                        </div>
+        
+        
+                        <div class="clock-section">
+                            <div class="clock-wrapper">
+                                <div class="current-time">
+                                    <span class="clock-time">00:00</span>
+                                </div>
+                                <span class="clock-separator">/</span>
+                                <div class="duration-time">
+                                    <span class="clock-time">00:00</span>
+                                </div>
+                            </div>
+                        </div>
+        
+        
+                        <div class="resize-section">
+                            <div class="resize-wrapper">
+                                <div class="resize-icon">
+                                    <span class="icon-part icon-part__top-left"></span>
+                                    <span class="icon-part icon-part__top-rigth"></span>
+                                    <span class="icon-part icon-part__bottom-left"></span>
+                                    <span class="icon-part icon-part__bottom-rigth"></span>
+                                </div>
+                            </div>
+                        </div>
+        
+        
+                    </div>
+                </div>
+                <!-- ***** -->
+            </div>
+            <div class="main-section__item">
+                <div class="comments">
+                    
+                    <div class="comment" id="jonathan">
+                        <div class="comment__picture" style="background-image: url('https://vignette.wikia.nocookie.net/jojo-bizarre-adventure-stardust-crusaders/images/5/57/Jonathan.jpg/revision/latest?cb=20170405174054&path-prefix=es');"></div>
+                        <div class="comment_info">
+                            <div class="comment__user-name">Jonathan Joestar</div>
+                            <div class="comment__body">Plaaatziii!! was the plataform where I learn the basics of media API to make this proyect. I don't intent made money adding ads on the video (and actually I doesnt earn) all this is part of my studies to try improved my skills and learn things I didnt know.</div>
+                        </div>
+                    </div>
+
+                    <div class="comment">
+                        <div class="comment__picture" style="background-image: url('https://vignette.wikia.nocookie.net/jjba/images/f/fa/JosephJoestarFull.jpg/revision/latest?cb=20140317053828');"></div>
+                        <div class="comment_info">
+                            <div class="comment__user-name">Joseph Joestar</div>
+                            <div class="comment__body">Your next line is: "All this was worth?." Yeap it actually was worth. More than made a fancy page, the thing I intended with this project was put on test my skills to made a basic Media player and have more knowledge about the media API and I did it.</div>
+                        </div>
+                    </div>
+
+                    <div class="comment">
+                        <div class="comment__picture" style="background-image: url('https://vignette.wikia.nocookie.net/jojo/images/c/c8/JotaroProfileOVA.png/revision/latest/scale-to-width-down/631?cb=20170725043024&path-prefix=es');"></div>
+                        <div class="comment_info">
+                            <div class="comment__user-name">Jotaro Joestar</div>
+                            <div class="comment__body">Yare yare daze, make this was really hard, even if doesn't seems like that, now I going to take a break. You feel free to download the code and modify as you like, see ya.</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>This page was created by Daniel Reyes. The images from the user pictures were taken from https://vignette.wikia.nocookie.net/. The video is a fragment of the Anime JoJos bizarre adventures and its only used for educational purposes. The rigths from the Jojo franchise are from Hirohiko Araki.</p>
+        </footer>
+
+        <script type="module" src="JavascriptCode/index.js"></script>
+        <script defer src="JavascriptCode/DioWarning.js"></script>
+    </body>
+</html>

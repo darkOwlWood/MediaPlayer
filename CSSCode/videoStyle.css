@@ -1,0 +1,494 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@500&display=swap');
+
+:root{
+    --initial-height: 20px;
+    --side-separation: 30px;
+}
+
+/*====================MEDIA====================*/
+.video-container{
+    width: 100%;
+    margin: 0 auto 0; /*---*/
+
+    display: flex;
+    justify-content: center;
+
+    position: relative;
+}
+
+.main-video{
+    display: flex;   /*Si le quito esto aparecen 4 sentimetros en la parte baja del container*/
+    background-color: black;
+}
+
+.main-video video{
+    width: 100%;
+}
+
+.video-controls{
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+
+    position: absolute;
+    bottom: 0;
+    
+    opacity: 1;
+    transition: opacity .3s;
+
+    background: linear-gradient(180deg, rgba(119,215,226,0.01) 0%, rgba(42,72,127,.6));
+}
+
+.video-controls--invisible{
+    opacity: 0;
+}
+/*====================MEDIA====================*/
+
+
+
+
+/*====================PLAY====================*/
+.play-section{
+    width: 35px;
+    height: var(--initial-height);
+    margin-left: var(--side-separation);
+    padding: 0 7px;  /*---*/
+
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-wrapper{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;    
+}
+
+.play-icon{
+    width: 100%;
+    height: 100%;
+    transition: .4s;
+    
+    background-color: honeydew;    
+}
+
+.play-icon--play{
+    clip-path: polygon(10% 0, 10% 0, 10% 0, 10% 0, 10% 0, 90% 50%, 90% 50%, 10% 100%, 10% 100%, 10% 100%, 10% 100%, 10% 100%);
+}
+
+.play-icon--pause{
+    clip-path: polygon(0 0, 30% 0, 30% 50%, 70% 50%, 70% 0, 100% 0, 100% 100%, 70% 100%, 70% 50%, 30% 50%, 30% 100%, 0 100%);
+}
+
+.play-icon--rewind{
+    clip-path: polygon(50% 100%, 0 100%, 0 0, 100% 0, 100% 60%, 65% 60%, 65% 70%, 45% 50%, 65% 30%, 65% 40%, 80% 40%, 80% 20%, 20% 20%, 20% 80%, 50% 80%);
+}
+/*====================PLAY====================*/
+
+
+
+
+/*====================SOUND====================*/
+.sound-section{
+    width: 200px;  
+    height: var(--initial-height);
+    padding: 0 3px;  /*---*/    
+
+    box-sizing: border-box;
+    
+    display: none;
+}
+
+.sound-section > div{
+    margin-right: 10px;
+}
+
+/* -----SOUND ICON----- */
+.sign-wrapper{
+    width: 30px; 
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.sound-icon{
+    width: 80%;
+    height: 100%;
+
+    clip-path: polygon(0 60%, 35% 70%, 75% 100%, 75% 0, 35% 30%, 0 40%);
+
+    background-color: honeydew;
+}
+
+.prohibition-sign{
+    width: 3px;
+    height: 0%;
+
+    border-radius: 20px;
+
+    position: absolute;
+    z-index: 10;
+
+    transform: rotatez(-45deg);
+    transition: .5s;
+
+    background-color: #424242;
+}
+
+.prohibition-sign--slient{
+    height: 120%;
+}
+/* -----SOUND ICON----- */
+
+
+
+/* -----SOUND BAR----- */
+.sound-bar-wrapper{
+    width:80%;
+    height: 5px;
+
+    display: flex;
+    justify-content: flex-start;
+
+    background-color: #424242;
+}
+
+.sound-bar{
+    width: 0%;
+    height: 100%;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    background-color: honeydew;
+}
+
+.sound-dot{
+    width: 10px;
+    height: 200%;
+
+    border-radius: 100%;
+
+    position: absolute;
+    display: inline-block;
+    right: -5px;
+
+    background-color: honeydew;
+}
+/* -----SOUND BAR----- */
+/*====================SOUND====================*/
+
+
+
+
+/*====================PROGRESS====================*/
+.progress-bar-section{
+    width: 100%;
+    height: 30%;
+    padding: 0 15px;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-wrapper{
+    width: 100%;
+    height: 5px;
+    
+    display: flex;
+    
+    transition: height .1s linear;
+
+    background-color: #0d47a1;
+}
+
+.progress-wrapper__bar{
+    width: 0;
+    height: 100%;
+    
+    position: relative;
+    display: flex;
+    align-items: center;
+    
+    background-color:#42a5f5;
+}
+
+.progress-wrapper__dot{
+    width: 10px;
+    height: 200%;
+
+    border-radius: 100%;
+    
+    position: absolute;
+    right: -5px;
+
+    background-color:  #42a5f5;
+}
+
+.progress-bar-section:hover .progress-wrapper{
+    height: 8px;
+}
+
+.progress-bar-section:hover .progress-wrapper__dot{
+    width: 15px;
+}
+/*====================PROGRESS====================*/
+
+
+
+
+/*====================CLOCK====================*/
+.clock-section{
+    height: var(--initial-height);
+    padding: 5px;
+
+    font-weight: bolder;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.clock-wrapper{
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.clock-hours-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.clock-hours-wrapper--invisible{
+    display: none;
+}
+
+.clock-wrapper > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock-separator{
+    margin: 0 5px;
+}
+/*====================CLOCK====================*/
+
+
+
+
+/*====================RESIZE====================*/
+.resize-section{
+    width: 20px;
+    height: var(--initial-height);
+
+    margin-left: auto;
+    margin-right: var(--side-separation);
+}
+
+.resize-wrapper{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+}
+
+.resize-icon{
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    justify-content: space-between;
+    align-content: space-around;
+    flex-wrap: wrap;
+}
+
+.icon-part{
+    width: 50%;
+    height: 50%;
+
+    background-color: honeydew;
+}
+
+.icon-part__top-left{
+    clip-path: polygon(90% 10%, 90% 30%, 30% 30%, 30% 90%, 10% 90%, 10% 10%);
+}
+
+.icon-part__top-rigth{
+    clip-path: polygon(90% 10%, 90% 90%, 70% 90%, 70% 30%, 10% 30%, 10% 10%);
+}
+
+.icon-part__bottom-rigth{
+    clip-path: polygon(90% 90%, 10% 90%, 10% 70%, 70% 70%, 70% 10%, 90% 10%);
+}
+
+.icon-part__bottom-left{
+    clip-path: polygon(10% 90%, 90% 90%, 90% 70%, 30% 70%, 30% 10%, 10% 10%);
+}
+
+.resize-wrapper:hover .resize-icon{
+    animation-name: beat;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+}
+
+@keyframes beat{
+    50%{
+        transform: scale(1.1,1.1);
+    }
+
+    100%{
+        transform: scale(1,1);
+    }
+}
+/*====================RESIZE====================*/
+
+
+
+
+/*====================ADS====================*/
+.ad{
+    width: 90%;
+    height: 70px; 
+    padding: 10px;
+
+    box-sizing: border-box;
+    background-color: #424242;
+    
+    position: absolute;
+    bottom: 50px;
+}
+
+.ad__link{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.ad__info{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    text-align: center;
+    font-size: .8em; /**/
+}
+
+.ad__img{
+    height: 80%;
+}
+
+.ad__info > *{
+    margin: 0;
+}
+
+.ad__body{
+    font-size: .8em;
+}
+
+.close-icon{
+    color: crimson;
+    background-color: whitesmoke;
+
+    cursor: pointer;
+
+    font-weight: bolder;
+
+    position: absolute;
+    right: 0;
+    top:0;
+}
+/*====================ADS====================*/
+
+
+
+/*====================MEDIA QUERYS====================*/
+/*The minimun with in a computer is 500px*/
+@media(min-width: 500px){
+    .video-container{
+        width: 95%;
+    }
+
+    .sound-section{
+        width: 150px;  
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+@media(min-width: 660px){
+    .video-container{
+        width: 85%;
+    }
+
+    .ad__info{
+        font-size: 1em;
+    }
+}
+
+@media(min-width: 800px){
+    .video-container{
+        width: 80%;
+    }
+}
+
+@media(min-width: 900px){
+    .video-container{
+        width: 65%;
+    }
+
+    .ad{
+        width: 75%;    /**/
+    }
+
+    .ad__info{
+        font-size: .8em; /**/
+    }
+}
+
+@media(min-width: 1000px){
+    .ad__info{
+        font-size: .9em; /**/
+    }
+}
+/*====================MEDIA QUERYS====================*/
+
+.container{
+    width: 300px;
+    height: 900px;
+}
